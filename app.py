@@ -4,7 +4,7 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 
-@app.route('/tv', methods=('GET',))
+@app.route('/', methods=('GET',))
 def tv():
     with open(os.environ['LOG_FILE'], 'r') as f:
         lines = [line.strip() for line in f.readlines()[-25:]]
