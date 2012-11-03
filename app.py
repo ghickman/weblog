@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/tv', methods=('GET',))
 def tv():
     with open(os.environ['LOG_FILE'], 'r') as f:
-        lines = [line.strip() for line in f.readlines()[-2:]]
+        lines = [line.strip() for line in f.readlines()[-25:]]
         lines.reverse()
         return render_template('home.html', lines=lines)
 
